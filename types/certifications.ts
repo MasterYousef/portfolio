@@ -4,4 +4,8 @@ interface Certifications {
   image: string;
   skills: string[];
 }
-export type { Certifications };
+interface CertificationsRes {
+  status: string;
+  data: Certifications[];
+}
+export type { Certifications, CertificationsRes };

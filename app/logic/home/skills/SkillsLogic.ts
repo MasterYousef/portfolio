@@ -1,8 +1,8 @@
 import { getData } from "@/hooks/getData";
-import { Skill } from "@/types/skills";
+import { Skill, SkillRes } from "@/types/skills";
 
 async function SkillsLogic(): Promise<Skill[] | { error: string }> {
-  const skills = await getData<Skill[]>("skills");
+  const skills = await getData<SkillRes>("skills");
   if ("data" in skills) {
     if (skills.data.length > 0) {
       return skills.data;

@@ -2,4 +2,8 @@ interface Skill {
   name: string;
   count: number;
 }
-export type { Skill };
+interface SkillRes {
+  status: string;
+  data: Skill[];
+}
+export type { Skill, SkillRes };

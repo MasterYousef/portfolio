@@ -1,10 +1,10 @@
 import { getData } from "@/hooks/getData";
-import { Certifications } from "@/types/certifications";
+import { Certifications, CertificationsRes } from "@/types/certifications";
 
 async function CertificationsLogic(): Promise<
   Certifications[] | { error: string }
 > {
-  const certifications = await getData<Certifications[]>("certifications");
+  const certifications = await getData<CertificationsRes>("certifications");
   if ("data" in certifications) {
     if (certifications.data.length > 0) {
       return certifications.data;
