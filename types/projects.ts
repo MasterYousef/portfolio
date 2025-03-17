@@ -10,4 +10,8 @@ interface ProjectResponse {
   status: string;
   data: Project;
 }
-export type { Project, ProjectResponse };
+interface ProjectsResponse {
+  status: string;
+  data: Project[];
+}
+export type { Project, ProjectResponse, ProjectsResponse };
