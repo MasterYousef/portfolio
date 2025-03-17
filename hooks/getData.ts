@@ -6,6 +6,7 @@ const getData = async <type>(url: string): Promise<type | Error> => {
     const res = await BaseUrl.get(url);
     return res.data;
   } catch (err) {
+    console.log(err);
     if (err instanceof AxiosError) {
       return new Error(err.response?.data.message);
     } else {
