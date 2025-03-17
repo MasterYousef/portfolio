@@ -1,0 +1,356 @@
+@import "react-toastify/dist/ReactToastify.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+$main-color: rgb(167 139 250 / 1);
+$alt-color: rgb(99, 102, 241);
+$backGround-alt: #eee;
+$backGround-overlay: rgba(0, 0, 0, 0.363);
+$icons: "fa-facebook" 50% #3b5998 40px 35px, "fa-whatsapp" 50% #25d366 32px 38px,
+  "fa-linkedin" 15% #0077b5 30px 30px, "fa-github" 50% #333 38px 30px,
+  "fa-envelope" 15% #d44638 28px 42.5px;
+$main-gradient: linear-gradient(
+  92.88deg,
+  #455eb5 9.16%,
+  #5643cc 43.89%,
+  #673fd7 64.72%
+);
+
+:root {
+  --skill-rate: 0%;
+  --main-color: #{$main-color};
+  --alt-color: #{$alt-color};
+  --backGround-alt: #{$backGround-alt};
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.main-color-text {
+  color: $main-color;
+}
+.alt-color-text {
+  color: $alt-color;
+}
+
+.bg-alt {
+  background-color: $backGround-alt;
+}
+
+.bg-overlay {
+  background-color: $backGround-overlay;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button {
+  background-image: $main-gradient;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 3rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  transition: all 0.5s;
+  touch-action: manipulation;
+  &:hover {
+    box-shadow: 0 0 15px 3px $alt-color;
+    transition-duration: 0.1s;
+  }
+}
+
+header {
+  position: fixed;
+  z-index: 39;
+  color: white;
+  ul {
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: black;
+      box-shadow: 0 0 20px 5px $main-color;
+    }
+  }
+  li {
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    &:hover {
+      transform: scale(1.3);
+      color: $main-color;
+    }
+  }
+  i {
+    color: $main-color;
+  }
+}
+
+form {
+  font-family: cursive;
+  &.sign-up input {
+    margin: 5px;
+  }
+  input {
+    width: 85%;
+    margin: 15px 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    outline: 2px solid $alt-color;
+    padding: 5px 0;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    &:focus-within {
+      outline: 2px solid $main-color;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.profile {
+  cursor: pointer;
+  &:hover {
+    box-shadow: $alt-color 0px 0px 15px 10px;
+    button {
+      opacity: 1;
+    }
+  }
+}
+
+.landing {
+  background-image: url("../public/image/landing.png");
+  z-index: -1;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  .right-side {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $main-color;
+      clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .img-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-name: float;
+      &:hover {
+        animation-play-state: paused;
+      }
+      img {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          box-shadow: 0 0 20px 5px $alt-color;
+          z-index: 2;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.skill {
+  transition: all 0.3s ease-in-out;
+  & .circle {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background: conic-gradient($main-color 0% 1%, #ddd 0% 100%);
+    z-index: -1;
+  }
+  p {
+    opacity: 0;
+    position: absolute;
+    width: 14rem;
+    height: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $backGround-alt;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 5;
+  }
+  &:hover p {
+    opacity: 1;
+    box-shadow: $alt-color 0 0 20px 5px;
+  }
+}
+
+.project {
+  transition: box-shadow 0.3s ease-in-out;
+  .details {
+    background-color: $backGround-overlay;
+    opacity: 0;
+  }
+  i {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &:hover {
+    box-shadow: $main-color 0 0 15px 10px;
+    .details {
+      opacity: 1;
+      h2 {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .links {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.comments,
+textarea {
+  &::-webkit-scrollbar {
+    width: 5px;
+    &#{"-thumb"} {
+      background-color: $main-color;
+    }
+    &#{"-button"} {
+      display: none;
+    }
+  }
+}
+.slick-slider {
+  cursor: w-resize;
+  .slick-slide {
+    > div {
+      display: flex;
+      padding: 25px 5px;
+    }
+  }
+  .slick-dots {
+    li {
+      &.slick-active {
+        button::before {
+          color: $main-color;
+          font-weight: 500px;
+          opacity: 1;
+          transform: scale(1.5);
+        }
+      }
+      &:not(.slick-active) button {
+        &:hover {
+          &::before {
+            color: $main-color;
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+#Certifications {
+  background-image: url("../public/image/certifications.png");
+  background-size: cover;
+  padding: 10px;
+  width: 100%;
+  .info {
+    &::-webkit-scrollbar {
+      width: 5px;
+      &#{"-thumb"} {
+        background-color: $main-color;
+      }
+      &#{"-button"} {
+        display: none;
+      }
+    }
+  }
+  li {
+    margin: 10px;
+  }
+  section {
+    & > div {
+      &:hover {
+        box-shadow: $main-color 0 0 10px 10px;
+      }
+    }
+  }
+}
+
+footer {
+  .icons {
+    & > div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: auto 10px;
+    transition: all 0.2s ease-in;
+    i {
+      transition: all 0.2s ease-in;
+    }
+    @each $icon, $radius, $color, $height, $width in $icons {
+      &:has(i.#{$icon}) {
+        border-radius: $radius;
+        width: $width;
+        height: $height;
+      }
+    }
+    &:hover {
+      background-color: white;
+      i {
+        transform: scale(1.2);
+        @each $icon, $radius, $color, $height, $width in $icons {
+          &.#{$icon} {
+            color: $color;
+          }
+        }
+        &.fa-github {
+          color: #333;
+        }
+
+        &.fa-envelope {
+          color: #d44638;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .right-side {
+    &::before {
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%) !important;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .sign-up input {
+    margin: 10px !important;
+  }
+}
