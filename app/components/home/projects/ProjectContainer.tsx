@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Project } from "@/types/projects";
 import { ToastContainer } from "react-toastify";
+import { useEffect, useState } from "react";
+
 function ProjectContainer({ data }: { readonly data: Project[] }) {
   const settings = {
     dots: true,
@@ -32,9 +34,35 @@ function ProjectContainer({ data }: { readonly data: Project[] }) {
       },
     ],
   };
+
+  const [initialX, setInitialX] = useState(-600);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    const updateInitialX = () => {
+      if (typeof window !== "undefined") {
+        setInitialX(window.innerWidth < 768 ? -200 : -600);
+      }
+    };
+
+    updateInitialX(); // Set initial value on mount
+    window.addEventListener("resize", updateInitialX); // Update on resize
+
+    setHasMounted(true); // Mark component as mounted
+
+    return () => {
+      window.removeEventListener("resize", updateInitialX); // Cleanup on unmount
+    };
+  }, []);
+
+  if (!hasMounted) {
+    // Avoid rendering until the component has mounted
+    return null;
+  }
+
   return (
     <motion.div
-      initial={{ x: -700 }}
+      initial={{ x: initialX }}
       whileInView={{ x: 0 }}
       viewport={{ once: true }}
       transition={{ type: "spring", duration: 1 }}
