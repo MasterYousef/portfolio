@@ -13,10 +13,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Yousef Mostafa",
-  description: `Discover the wonders of ancient Egypt with our comprehensive tour packages.
-     Experience iconic landmarks, luxury accommodations,
-      and expert-guided tours through historic sites like the Pyramids, Luxor
-      , and the Nile River. Book your unforgettable Egyptian adventure today!`,
+  description: `Full-Stack Developer with expertise in React.js, Next.js, Node.js, Express.js, and NestJS. Passionate about building scalable and
+ high-performance web applications with a strong focus on backend development, API design, and secure payment integrations.
+ Experienced in using MongoDB, Redis, and Redux Toolkit to create efficient and maintainable systems. Always eager to learn,
+ solve real-world problems, and contribute to innovative projects`,
   icons: {
     icon: "/image/logo.png",
   },
