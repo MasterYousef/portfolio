@@ -24,7 +24,7 @@ function SignUp({
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="relative bg-white w-3/4 sm:w-1/2 md:w-1/3 lg:w-1/4 h-3/4 z-50 rounded-md flex justify-center items-center"
+        className="relative bg-white w-3/4 sm:w-1/2 md:w-1/3 lg:w-1/4 py-5 z-50 rounded-md flex justify-center items-center"
       >
         <form
           className="flex flex-col w-full h-full justify-center items-center sign-up"

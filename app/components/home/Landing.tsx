@@ -6,8 +6,7 @@ function Landing() {
   const images = [
     {
       src: "YM-photo1.png",
-      class:
-        "left-5 lg:left-[-2%] sm:left-[10%] top-1/3 sm:top-[35%] sm:top-60",
+      class: "right-[40%] lg:left-[-2%]  top-1/3 sm:top-[35%] sm:top-60",
     },
     {
       src: "YM-photo2.png",
@@ -21,7 +20,7 @@ function Landing() {
   return (
     <article className="landing text-white flex flex-col sm:flex-row justify-between items-center">
       <section className="w-full h-1/2 sm:h-full sm:w-1/2 text-center flex justify-center items-center">
-        <h1 className="font-mono text-2xl font-bold main-color-text overflow-hidden space">
+        <h1 className="font-mono mt-5 text-xl sm:text-2xl font-bold main-color-text overflow-hidden space">
           <Typewriter
             onInit={(typewriter) => {
               typewriter
@@ -43,14 +42,14 @@ function Landing() {
           />
         </h1>
       </section>
-      <section className="right-side w-full sm:w-1/2 h-3/4 sm:h-full">
+      <section className="right-side w-full sm:w-1/2 h-1/2 sm:h-full">
         <div className="img-container">
           {images.map((image, index) => (
             <img
               key={index}
               src={`./image/${image.src}`}
               alt={`Yousef-img-${index}`}
-              className={`absolute w-56 h-56 lg:w-72 lg:h-72 rounded-full ${image.class}`}
+              className={`absolute w-52 h-52 sm:w-56 sm:h-56 lg:w-72 lg:h-72 rounded-full ${image.class}`}
             />
           ))}
         </div>
