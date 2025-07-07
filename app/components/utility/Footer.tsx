@@ -6,7 +6,7 @@ function Footer() {
       </p>
       <div className="icons text-white flex justify-between text-4xl w-auto ">
         <div>
-          <a target="_blank" href="mailto:imayosefgo@gmail.com">
+          <a target="_blank" href="https://mail.google.com/mail/u/0/?fs=1&to=imayousefgo@gmail.com&su=SUBJECT&body=BODY&bcc=someone@example.com&tf=cm">
             <i className="fa-solid fa-envelope "></i>
           </a>
         </div>
