@@ -1,6 +1,6 @@
 import ProjectLogic from "@/app/logic/home/projects/ProjectsLogic";
 import Title from "../../utility/Title";
-import ProjectContainer from "./ProjectContainer";
+import ProjectCard from "./ProjectCard";
 async function Projects() {
   const logic = await ProjectLogic();
   return (
@@ -11,7 +11,7 @@ async function Projects() {
           <p>Failed to load Projects. Please try again later.</p>
         </div>
       ) : (
-        <ProjectContainer data={logic} />
+        logic.map((d, i) => <ProjectCard data={d} key={i} />)
       )}
     </div>
   );

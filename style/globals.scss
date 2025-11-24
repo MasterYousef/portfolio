@@ -167,59 +167,46 @@ form {
 }
 
 .skill {
-  transition: all 0.3s ease-in-out;
-  & .circle {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all 0.7s ease;
+  &::before {
+    content: "";
     position: absolute;
-    width: 15rem;
-    height: 15rem;
-    border-radius: 50%;
-    background: conic-gradient($main-color 0% 1%, #ddd 0% 100%);
-    z-index: -1;
-  }
-  p {
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      0deg,
+      transparent,
+      transparent 30%,
+      $main-color
+    );
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
     opacity: 0;
-    position: absolute;
-    width: 14rem;
-    height: 14rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: $backGround-alt;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 5;
-  }
-  &:hover p {
-    opacity: 1;
-    box-shadow: $alt-color 0 0 20px 5px;
-  }
-}
-
-.project {
-  transition: box-shadow 0.3s ease-in-out;
-  .details {
-    background-color: $backGround-overlay;
-    opacity: 0;
-  }
-  i {
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    &:hover {
-      transform: scale(1.2);
-    }
   }
   &:hover {
-    box-shadow: $main-color 0 0 15px 10px;
-    .details {
-      opacity: 1;
-      h2 {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .links {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    transform: scale(1.05);
+    box-shadow: 0 0 20px $main-color;
+  }
+  &:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+  }
+}
+.project {
+  .pr-btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-top: auto;
+    &:hover {
+      transform: scale(1.2);
     }
   }
 }

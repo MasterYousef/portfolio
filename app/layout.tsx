@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@/style/globals.scss";
 import "react-datepicker/dist/react-datepicker.css";
-import "slick-carousel/slick/slick.css"; // Core Slick styles
-import "slick-carousel/slick/slick-theme.css"; // Optional theme styles
 import Header from "./components/utility/Header";
 import Footer from "./components/utility/Footer";
 import "react-toastify/dist/ReactToastify.css";

@@ -14,7 +14,7 @@ async function Skills() {
       ) : (
         <section className="flex flex-wrap h-full justify-center w-full">
           {logic.map((s) => (
-            <SkillCard key={s.name} title={s.name} rate={s.count} />
+            <SkillCard key={s.name} title={s.name} image={s.image} />
           ))}
         </section>
       )}

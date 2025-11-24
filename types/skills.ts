@@ -1,6 +1,6 @@
 interface Skill {
   name: string;
-  count: number;
+  image: string;
 }
 interface SkillRes {
   status: string;

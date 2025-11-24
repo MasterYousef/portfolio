@@ -5,6 +5,7 @@ interface Project {
   code: string;
   image: string;
   likes: string[];
+  features: string[];
 }
 interface ProjectResponse {
   status: string;
