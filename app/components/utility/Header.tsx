@@ -10,7 +10,7 @@ function Header({ logic }: { readonly logic: any }) {
   const [signUp, setSignUp] = useState(false);
   return (
     <header className="w-full flex justify-center items-center p-5 header font-mono text-xl">
-      <i className="fa-solid fa-heart text-6xl lg:text-4xl animate-bounce me-auto lg:mx-5 "></i>
+      <i className="fa-solid fa-heart text-5xl lg:text-4xl animate-bounce me-auto lg:mx-5 "></i>
       <ul className="hidden lg:flex py-2 text-md mx-auto rounded-full w-1/2 font-medium justify-evenly items-center bg-opacity-40 bg-black">
         <li>
           <a href="/">Home</a>
@@ -39,7 +39,7 @@ function Header({ logic }: { readonly logic: any }) {
           </div>
           <Menu>
             <MenuButton className=" top-4 right-4 fixed inline-flex lg:hidden items-center rounded-md bg-gray-800 py-1.5 px-3 text-6xl/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
-              <i className="fa-solid fa-bars"></i>
+              <i className="fa-solid fa-bars text-4xl"></i>
             </MenuButton>
             <MenuItems
               anchor="bottom end"

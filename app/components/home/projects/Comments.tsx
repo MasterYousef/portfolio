@@ -38,7 +38,7 @@ function Comments({
       as="div"
       open={IsOpen}
       className="fixed inset-0 z-50 flex  items-center justify-center"
-      onClose={() => null}
+      onClose={() => setIsOpen(false)}
     >
       <div className="fixed inset-0 bg-overlay"></div>
       <DialogPanel className="bg-white comments relative w-full lg:w-3/4 h-full lg:h-3/4 p-4 rounded z-10 flex flex-wrap justify-center items-center overflow-auto">
